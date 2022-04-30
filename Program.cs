@@ -1,69 +1,21 @@
 ﻿using System;
-
-using System.Collections;
-
+using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
-using System.Text;
-
-
-
-
-
-namespace P5pilas
-
+namespace sistemaRestaurante
 {
-
-    internal class Program
-
+    static class Program
     {
-
-        public static int sumaNodos(IEnumerable myCollection)
-
+        /// <summary>
+        /// Punto de entrada principal para la aplicación.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-
-            int suma = 0;
-
-
-
-            foreach (Object obj in myCollection)
-
-                suma = suma + int.Parse(string.Format("{0}", obj));
-
-            return suma;
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
-
-
-
-        public static void Main()
-
-        {
-
-            Stack p5Pila = new Stack();
-
-            p5Pila.Push(5);
-
-            p5Pila.Pop();
-
-            p5Pila.Push(3);
-
-            p5Pila.Pop();
-
-            p5Pila.Push(7);
-
-            p5Pila.Push(3);
-
-            p5Pila.Push(1);
-
-
-
-
-
-            Console.Write("La suma de los datos de la pila es: " + sumaNodos(p5Pila) + " ");
-
-        }
-
     }
-
 }
